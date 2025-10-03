@@ -14,7 +14,11 @@ public class MovieManager {
         return showList;
     }
 
-    public void setShowList(List<Show> showList) {
-        this.showList = showList;
+    public void addShow(Show show) {
+        showList.add(show);
+    }
+
+    public void removeShow(Show show){
+        showList.remove(show);
     }
 }

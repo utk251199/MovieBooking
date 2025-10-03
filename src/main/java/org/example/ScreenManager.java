@@ -13,4 +13,12 @@ public class ScreenManager {
     public List<Screen> getScreenList() {
         return screenList;
     }
+
+    public void addScreen(Screen screen){
+        screenList.add(screen);
+    }
+
+    public void removeScreen(Screen screen){
+        screenList.remove(screen);
+    }
 }
