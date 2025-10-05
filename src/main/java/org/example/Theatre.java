@@ -7,13 +7,11 @@ public class Theatre {
 
     private Location location;
     private MovieManager movieManager;
-    private List<Booking> bookings;
 
 
     Theatre(Location location, MovieManager movieManager){
         this.location = location;
         this.movieManager = movieManager;
-        this.bookings = new ArrayList<>();
     }
 
     public Location getLocation() {
@@ -30,11 +28,5 @@ public class Theatre {
 
     public List<Show> getAllShows(){
         return movieManager.getShowList();
-    }
-
-    public void createBooking(int bookingId,User user, Show show){
-        Booking booking = new Booking();
-        booking.createBooking(bookingId,user,this,show);
-        bookings.add(booking);
     }
 }

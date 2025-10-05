@@ -31,6 +31,8 @@ public class Main {
 
         Theatre closestTheatre = tm.filterByPinCode(32316);
         closestTheatre.getAllShows();
-        closestTheatre.createBooking(1,user1,show);
+
+        BookingService bookingService = new BookingService();
+        bookingService.createBooking(1,user1,closestTheatre,show);
     }
 }
