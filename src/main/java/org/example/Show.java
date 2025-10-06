@@ -1,16 +1,20 @@
 package org.example;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Show {
     private Movie movie;
     private Screen screen;
     private LocalTime showTime;
+    private List<Seat> bookedSeats;
 
     public Show(Movie movie, Screen screen, LocalTime showTime) {
         this.movie = movie;
         this.screen = screen;
         this.showTime = showTime;
+        bookedSeats = new ArrayList<>();
     }
 
     public Movie getMovie() {
@@ -35,5 +39,13 @@ public class Show {
 
     public void setShowTime(LocalTime showTime) {
         this.showTime = showTime;
+    }
+
+    public List<Seat> getBookedSeats() {
+        return bookedSeats;
+    }
+
+    public void setBookedSeats(List<Seat> bookedSeats) {
+        this.bookedSeats = bookedSeats;
     }
 }

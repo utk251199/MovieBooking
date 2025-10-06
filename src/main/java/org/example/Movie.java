@@ -1,22 +1,17 @@
 package org.example;
 
-import java.time.LocalTime;
-
 public class Movie {
 
     private String movieName;
     private Language language;
     private Format format;
     private Genre genre;
-    private double price;
 
-    // Constructor with important fields
-    public Movie(String movieName, Language language, Format format, Genre genre, double price) {
+    public Movie(String movieName, Language language, Format format, Genre genre) {
         this.movieName = movieName;
         this.language = language;
         this.format = format;
         this.genre = genre;
-        this.price = price;
     }
 
     // All Getters and Setters
@@ -50,13 +45,5 @@ public class Movie {
 
     public void setGenre(Genre genre) {
         this.genre = genre;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 }

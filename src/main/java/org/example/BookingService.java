@@ -11,10 +11,9 @@ public class BookingService {
         bookings = new ArrayList<>();
     }
 
-
-    public void createBooking(int bookingId,User user, Theatre theatre, Show show){
+    public void createBooking(int bookingId,User user, Theatre theatre, Show show, List<Seat> selectedSeats){
         Booking booking = new Booking();
-        booking.createBooking(bookingId,user,theatre,show);
+        booking.createBooking(bookingId,user,theatre,show,selectedSeats);
         bookings.add(booking);
     }
 }

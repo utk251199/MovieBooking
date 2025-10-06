@@ -1,13 +1,16 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Screen {
 
     private int screenId;
-    private int totalSeats;
+    private List<Seat> seats;
 
-    Screen(int screenId, int totalSeats){
+    Screen(int screenId){
         this.screenId = screenId;
-        this.totalSeats = totalSeats;
+        seats = new ArrayList<>();
     }
 
     public int getScreenId() {
@@ -18,12 +21,13 @@ public class Screen {
         this.screenId = screenId;
     }
 
-    public int getTotalSeats() {
-        return totalSeats;
+    public List<Seat> getSeats() {
+        return seats;
     }
 
-    public void setTotalSeats(int totalSeats) {
-        this.totalSeats = totalSeats;
+    public void setSeats(List<Seat> seats) {
+        this.seats = seats;
     }
+
 
 }
