@@ -31,3 +31,10 @@ public class Seat {
         this.seatCategory = seatCategory;
     }
 }
+
+enum SeatCategory {
+
+    CLASSIC,
+    GOLD,
+    RECLINER
+}

@@ -47,15 +47,17 @@ public class Main {
         Theatre closestTheatre = tm.filterByPinCode(32316);
         closestTheatre.getAllShows();
 
-        Seat selectedSeat = new Seat(26,"A",SeatCategory.CLASSIC);
+        Seat selectedSeat = screen.getSeats().get(26);
         List<Seat> selectedSeats = new ArrayList<>();
         selectedSeats.add(selectedSeat);
 
 
         List<Integer> bookedSeats = show.getBookedSeatIds();
-        if(!selectedSeats.contains(selectedSeat.getSeatId())){
-            bookedSeats.add(selectedSeat.getSeatId());
-            //Payment logic
+        if(!bookedSeats.contains(selectedSeat.getSeatId())){
+            show.setBookedSeats(selectedSeats);
+            PricingService pricingService = new PricingService();
+            double amount = pricingService.calculateTotalPrice(selectedSeats);
+            Payment payment = new Payment(1,1,amount,PaymentMethod.CREDIT_CARD);
             BookingService bookingService = new BookingService();
             bookingService.createBooking(1,user1,closestTheatre,show,selectedSeats);
 
