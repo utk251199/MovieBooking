@@ -50,7 +50,20 @@ public class Main {
         Seat selectedSeat = new Seat(26,"A",SeatCategory.CLASSIC);
         List<Seat> selectedSeats = new ArrayList<>();
         selectedSeats.add(selectedSeat);
-        BookingService bookingService = new BookingService();
-        bookingService.createBooking(1,user1,closestTheatre,show,selectedSeats);
+
+
+        List<Integer> bookedSeats = show.getBookedSeatIds();
+        if(!selectedSeats.contains(selectedSeat.getSeatId())){
+            bookedSeats.add(selectedSeat.getSeatId());
+            //Payment logic
+            BookingService bookingService = new BookingService();
+            bookingService.createBooking(1,user1,closestTheatre,show,selectedSeats);
+
+        } else {
+            System.out.println("seat already booked, try again");
+            return;
+        }
+
+        System.out.println("BOOKING SUCCESSFUL");
     }
-}
+    }

@@ -3,6 +3,7 @@ package org.example;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Show {
     private Movie movie;
@@ -47,5 +48,9 @@ public class Show {
 
     public void setBookedSeats(List<Seat> bookedSeats) {
         this.bookedSeats = bookedSeats;
+    }
+
+    public List<Integer> getBookedSeatIds() {
+        return bookedSeats.stream().map(Seat::getSeatId).toList();
     }
 }
